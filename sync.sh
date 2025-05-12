@@ -5,7 +5,6 @@ BACKUP_DIR="$HOME/.dotfiles_backup"
 
 echo "🔁 Syncing dotfiles..."
 
-# Create backup directory if it doesn't exist
 mkdir -p "$BACKUP_DIR"
 
 # Helper: Link a file with backup
@@ -13,13 +12,15 @@ link_file() {
   src="$1"
   dest="$2"
 
-  # If the destination exists, back it up and move it
   if [ -e "$dest" ] || [ -L "$dest" ]; then
     echo "📦 Backing up $dest"
     mv "$dest" "$BACKUP_DIR/"
   fi
 
-  # Create a symlink from source to destination
+  # Ensure the target folder exists before creating the symlink
+  dest_dir=$(dirname "$dest")
+  mkdir -p "$dest_dir"
+
   ln -s "$src" "$dest"
   echo "🔗 Linked $dest → $src"
 }
@@ -29,12 +30,11 @@ link_file "$DOTFILES_DIR/config/nvim" "$HOME/.config/nvim"
 link_file "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
 link_file "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 
-# Link wezterm (adjust this for your Windows path, if needed)
-link_file "$DOTFILES_DIR/config/wezterm.lua" "/mnt/c/Users/gamef/.wezterm.lua"
+# Link wezterm (adjust this for your Windows path)
+link_file "$DOTFILES_DIR/config/wezterm.lua" "/mnt/c/Users/your_user/AppData/Local/wezterm/wezterm.lua"
 
 # Git push if desired
 echo "📤 Pushing to Git..."
 cd "$DOTFILES_DIR" && git add . && git commit -m "sync: updated dotfiles" && git push
 
 echo "✅ Done!"
-
