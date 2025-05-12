@@ -2,8 +2,9 @@
 
 DOTFILES_DIR="$HOME/github/.dotfiles"
 BACKUP_DIR="$HOME/.dotfiles_backup"
+COMMIT_MSG=${1:-"sync: update dotfiles"}
 
-echo "🔁 Syncing dotfiles..."
+echo -e "\n🔁 Starting dotfiles sync...\n"
 
 mkdir -p "$BACKUP_DIR"
 
@@ -17,7 +18,6 @@ link_file() {
     mv "$dest" "$BACKUP_DIR/"
   fi
 
-  # Ensure the target folder exists before creating the symlink
   dest_dir=$(dirname "$dest")
   mkdir -p "$dest_dir"
 
@@ -25,16 +25,13 @@ link_file() {
   echo "🔗 Linked $dest → $src"
 }
 
-# Link configs
+echo "🔗 Linking configuration files..."
 link_file "$DOTFILES_DIR/config/nvim" "$HOME/.config/nvim"
 link_file "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
 link_file "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
-
-# Link wezterm (adjust this for your Windows path)
 link_file "$DOTFILES_DIR/config/wezterm.lua" "/mnt/c/Users/your_user/AppData/Local/wezterm/wezterm.lua"
 
-# Git push if desired
-echo "📤 Pushing to Git..."
-cd "$DOTFILES_DIR" && git add . && git commit -m "sync: updated dotfiles" && git push
+echo -e "\n📤 Pushing to Git with commit message: \"$COMMIT_MSG\""
+cd "$DOTFILES_DIR" && git add . && git commit -m "$COMMIT_MSG" && git push
 
-echo "✅ Done!"
+echo -e "\n✅ Dotfiles sync complete!\n"
