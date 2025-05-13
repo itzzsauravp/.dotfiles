@@ -1,22 +1,7 @@
-require("mini.animate").setup({
-  scroll = {
-    enable = true,
-    timing = require("mini.animate").gen_timing.linear({ duration = 0 }),
+-- plugins/ui.lua
+return {
+  {
+    "echasnovski/mini.animate",
+    enabled = false,
   },
-  resize = {
-    enable = true,
-    timing = require("mini.animate").gen_timing.linear({ duration = 0 }),
-  },
-  cursor = {
-    enable = true,
-    timing = require("mini.animate").gen_timing.linear({ duration = 0 }),
-  },
-  open = {
-    enable = true,
-    timing = require("mini.animate").gen_timing.linear({ duration = 0 }),
-  },
-  close = {
-    enable = true,
-    timing = require("mini.animate").gen_timing.linear({ duration = 0 }),
-  },
-})
+}
