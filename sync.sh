@@ -29,6 +29,7 @@ echo "🔗 Linking configuration files..."
 link_file "$DOTFILES_DIR/config/nvim" "$HOME/.config/nvim"
 link_file "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
 link_file "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
+link_file "$DOTFILES_DIR/tmux.sh" "$HOME/tmux.sh"
 link_file "$DOTFILES_DIR/config/wezterm.lua" "/mnt/c/Users/your_user/AppData/Local/wezterm/wezterm.lua"
 
 echo -e "\n📤 Pushing to Git with commit message: \"$COMMIT_MSG\""
