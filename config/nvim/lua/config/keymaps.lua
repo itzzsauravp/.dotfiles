@@ -3,3 +3,7 @@
 -- Add any additional keymaps here
 
 vim.keymap.set("i", "jk", "<Esc>", { desc = "Exit insert mode with jk" })
+
+vim.keymap.set("n", "<leader>tw", function()
+  vim.opt.wrap = not vim.opt.wrap:get()
+end, { desc = "Toggle Word Wrap" })
