@@ -2,7 +2,6 @@
 
 DOTFILES_DIR="$HOME/github/.dotfiles"
 BACKUP_DIR="$HOME/.dotfiles_backup"
-COMMIT_MSG=${1:-"sync: update dotfiles"}
 
 echo -e "\n +++++++++++ Starting dotfiles sync... ++++++++++\n"
 
@@ -35,8 +34,9 @@ link_file "$DOTFILES_DIR/config/lazygit" "$HOME/.config/lazygit"
 link_file "$DOTFILES_DIR/config/waybar" "$HOME/.config/waybar"
 link_file "$DOTFILES_DIR/config/hypr" "$HOME/.config/hypr"
 link_file "$DOTFILES_DIR/config/wofi" "$HOME/.config/wofi"
-# link_file "$DOTFILES_DIR/config/wezterm.lua" "/mnt/c/Users/your_user/AppData/Local/wezterm/wezterm.lua"
 
-echo -e "\n =======>>>> Pushing to Git with commit message: \"$COMMIT_MSG\""
-cd "$DOTFILES_DIR" && git add . && git commit -m "$COMMIT_MSG" && git push
 echo -e "\n (; Dotfiles sync complete!\n"
+# NOTE: This syslink doesnot work (not possible from windows <-> linux), its added here to know where to keep the files.
+
+# link_file "$DOTFILES_DIR/config/glazeWM/config.yaml" "/mnt/c/Users/<your_user>/.glzr/glazewm/config.yaml"
+# link_file "$DOTFILES_DIR/config/.wezterm.lua" "/mnt/c/Users/<your_user>/.wezterm.lua

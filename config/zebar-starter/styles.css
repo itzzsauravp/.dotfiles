@@ -83,7 +83,6 @@ body,
   background: transparent;
   margin-right: 4px;
   padding: 4px 8px;
-  border-radius: 100%;
   color: white;
   font-weight: bold;
   border: none;
@@ -93,10 +92,14 @@ body,
     background: rgb(255 255 255 / 15%);
   }
 
-  &.focused,
-  &:hover {
-    background: #00a36c;
+  &.focused{
+    background: #26C6DA;
+    width: 35px;
+    color: black;
+    border-radius: 5px;
   }
+  /* &:hover {
+  } */
 }
 
 .binding-mode,
