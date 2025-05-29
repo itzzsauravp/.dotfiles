@@ -29,19 +29,33 @@ $time\
 [ ](fg:color_bg1)\
 $line_break$character"""
 
-palette = 'gruvbox_dark'
+palette = 'icecold_dark'
+#palette = 'mild_pastel'
 
-[palettes.gruvbox_dark]
-color_fg0 = '#fbf1c7'
-color_bg1 = '#3c3836'
-color_bg3 = '#665c54'
-color_blue = '#458588'
-color_aqua = '#689d6a'
-color_green = '#98971a'
-color_orange = '#d65d0e'
-color_purple = '#b16286'
-color_red = '#cc241d'
-color_yellow = '#d79921'
+[palettes.icecold_dark]
+color_fg0     = '#F4F7F5'  # seasalt        | platinum (#d3d5d7)
+color_bg1     = '#222823'  # eerie black    | rich black (#050517)
+color_bg3     = '#575A5E'  # davy's gray    | mountbatten pink (#90708c)
+color_blue    = '#A7A2A9'  # rose quartz    | ash gray (#B3BFb8)
+color_aqua    = '#08090A'  # black          | hooker's green (#397367)
+color_green   = '#08090A'  # black          | hooker's green (#397367)
+color_orange  = '#575A5E'  # davy's gray    | mountbatten pink (#90708c)
+color_purple  = '#A7A2A9'  # rose quartz    | ash gray (#B3BFb8)
+color_red     = '#08090A'  # black          | rich black (#050517)
+color_yellow  = '#A7A2A9'  # rose quartz    | platinum (#d3d5d7)
+
+[palettes.mild_pastel]
+color_fg0     = '#d3d5d7'
+color_bg1     = '#050517'
+color_bg3     = '#90708c'
+color_blue    = '#B3BFb8'
+color_aqua    = '#397367'
+color_green   = '#397367'
+color_orange  = '#90708c'
+color_purple  = '#B3BFb8'
+color_red     = '#050517'
+color_yellow  = '#d3d5d7'
+
 
 [os]
 disabled = false
@@ -151,25 +165,25 @@ format = '[[ $symbol( $version) ](fg:color_fg0 bg:color_blue)]($style)'
 [docker_context]
 symbol = ""
 style = "bg:color_bg3"
-format = '[[ $symbol( $context) ](fg:#83a598 bg:color_bg3)]($style)'
+format = '[[ $symbol( $context) ](fg:#88c0d0 bg:color_bg3)]($style)'
 
 [conda]
 style = "bg:color_bg3"
-format = '[[ $symbol( $environment) ](fg:#83a598 bg:color_bg3)]($style)'
+format = '[[ $symbol( $environment) ](fg:#88c0d0 bg:color_bg3)]($style)'
 
 [pixi]
 style = "bg:color_bg3"
 format = '[[ $symbol( $version)( $environment) ](fg:color_fg0 bg:color_bg3)]($style)'
-
 
 [line_break]
 disabled = false
 
 [character]
 disabled = false
-success_symbol = "[ ⚡](fg:#a6da95 bold)"
-error_symbol = "[ ⚡](fg:#ed8796 bold)"
-vicmd_symbol = "[ ⚡](fg:#eed49f bold)"
+success_symbol = "[ ⚡](fg:#8fbcbb bold)"
+error_symbol = "[ ⚡](fg:#bf616a bold)"
+vicmd_symbol = "[ ⚡](fg:#b48ead bold)"
 vimcmd_replace_one_symbol = '[](bold fg:color_purple)'
 vimcmd_replace_symbol = '[](bold fg:color_purple)'
 vimcmd_visual_symbol = '[](bold fg:color_yellow)'
+
