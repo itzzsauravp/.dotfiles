@@ -1,0 +1,29 @@
+{
+  // Vim Keybindings (preserved)
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "k"],
+      "after": ["<Esc>"]
+    },
+    {
+      "before": ["ctrl+p"],
+      "command": "workbench.action.files.openFile",
+      "when": "editorTextFocus"
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["ctrl+p"],
+      "command": "workbench.action.files.openFile"
+    },
+    {
+      "before": ["ctrl+j"],
+      "after": ["j"]
+    },
+    {
+      "before": ["ctrl+k"],
+      "after": ["k"]
+    }
+  ]
+}
