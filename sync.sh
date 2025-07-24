@@ -12,28 +12,38 @@ link_file() {
   src="$1"
   dest="$2"
 
-  if [ -e "$dest" ] || [ -L "$dest" ]; then
-    echo "========== Backing up $dest =========="
-    mv "$dest" "$BACKUP_DIR/"
+  if [ -L "$dest" ] && [ "$(readlink "$dest")" = "$src" ]; then
+    echo "✔ $dest already linked → $src"
+    return
   fi
 
-  dest_dir=$(dirname "$dest")
-  mkdir -p "$dest_dir"
+  if [ -e "$dest" ] || [ -L "$dest" ]; then
+    echo "⚠️ Backing up $dest to $BACKUP_DIR"
 
+    # Avoid infinite nesting
+    if [[ "$dest" == "$BACKUP_DIR"* ]]; then
+      echo "⛔ Skipping backup of $dest (already in backup dir)"
+    else
+      mv "$dest" "$BACKUP_DIR/"
+    fi
+  fi
+
+  mkdir -p "$(dirname "$dest")"
   ln -s "$src" "$dest"
-  echo "********** Linked $dest → $src **********"
+  echo "✅ Linked $dest → $src"
 }
+
 
 echo "!!!!!!!!!! Linking configuration files... !!!!!!!!!!"
 link_file "$DOTFILES_DIR/config/nvim" "$HOME/.config/nvim"
-link_file "$DOTFILES_DIR/config/starship.toml" "$HOME/.config/starship.toml"
 link_file "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
 link_file "$DOTFILES_DIR/tmux.sh" "$HOME/tmux.sh"
 link_file "$DOTFILES_DIR/config/kitty" "$HOME/.config/kitty"
 link_file "$DOTFILES_DIR/config/lazygit" "$HOME/.config/lazygit"
-link_file "$DOTFILES_DIR/config/waybar" "$HOME/.config/waybar"
 link_file "$DOTFILES_DIR/config/hypr" "$HOME/.config/hypr"
-link_file "$DOTFILES_DIR/config/wofi" "$HOME/.config/wofi"
+link_file "$DOTFILES_DIR/config/fuzzel" "$HOME/.config/fuzzel"
+link_file "$DOTFILES_DIR/config/swaync" "$HOME/.config/swaync"
+link_file "$DOTFILES_DIR/config/waybar" "$HOME/.config/waybar"
 
 echo -e "\n (; Dotfiles sync complete!\n"
 # NOTE: This syslink doesnot work (not possible from windows <-> linux), its added here to know where to keep the files.

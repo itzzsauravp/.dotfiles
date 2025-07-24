@@ -1,17 +1,43 @@
-## USE IT HOW EVER YOU LIKE. 
-cause i dont care.
-
 Includes
-- nvim
+
+- Lazyvim
 - lazygit (sudo apt install lazygit / sudo pacman -S lazygit)
 - tmux
-- starship
 - wezterm
 - kitty
-- glazeWM
-- zebar (simple starter)
 - hyprland
-- hyprpaper ( and some wallpapers that i use )
-- hypridle
-- wofi
-- waybar
+- fuzzel (wofi alternative)
+- waybar ( by @d00m1k SimpleBlueColorWaybar )
+
+                -`                 
+                .o+`               
+               `ooo/               
+              `+oooo:              
+             `+oooooo:             
+             -+oooooo+:            
+           `/:-:++oooo+:           
+          `/++++/+++++++:          
+         `/++++++++++++++:         
+        `/+++ooooooooooooo/`       
+       ./ooosssso++osssssso+`      
+      .oossssso-````/ossssss+`     
+     -osssssso.      :ssssssso.    
+    :osssssss/        osssso+++.   
+   /ossssssss/        +ssssooo/-   
+  `/ossssso+/:-        -:/+osssso+- 
+ `+sso+:-`                 `.-/+oso
+`++:.                           `-/+
+.`                                 `
+
+     _   _           
+    | \ | | _____  __
+    |  \| |/ _ \ \/ /
+    | |\  |  __/>  < 
+    |_| \_|\___/_/\_\
+
+     _   _                     
+    | | | |   __ _  _ __ ___  
+    | |_| |  / _` || '_ ` _ \ 
+    |  _  | | (_| || | | | | |
+    |_| |_|  \__,_||_| |_| |_|
+         Hyprland Window Manager
