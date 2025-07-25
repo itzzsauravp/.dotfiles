@@ -2,10 +2,20 @@
 
 DOTFILES_DIR="$HOME/github/.dotfiles"
 BACKUP_DIR="$HOME/.dotfiles_backup"
+SYSTEMUI_DIR="$HOME/SystemUI"
 
 echo -e "\n +++++++++++ Starting dotfiles sync... ++++++++++\n"
 
 mkdir -p "$BACKUP_DIR"
+
+if [ ! -d "$SYSTEMUI_DIR" ]; then
+  echo "Creating $SYSTEMUI_DIR and subfolders .... Documents, Downloads, Pictures, Screenshots"
+  mkdir -p "$SYSTEMUI_DIR"/{Documents,Downloads,Pictures,Screenshots}
+else
+  echo "$SYSTEMUI_DIR already exists, skipping creation..."
+fi
+
+
 
 # Helper: Link a file with backup
 link_file() {
@@ -44,6 +54,7 @@ link_file "$DOTFILES_DIR/config/hypr" "$HOME/.config/hypr"
 link_file "$DOTFILES_DIR/config/fuzzel" "$HOME/.config/fuzzel"
 link_file "$DOTFILES_DIR/config/swaync" "$HOME/.config/swaync"
 link_file "$DOTFILES_DIR/config/waybar" "$HOME/.config/waybar"
+link_file "$DOTFILES_DIR/config/wallpapers/wallpaper.png" "$HOME/SystemUI/Pictures/wallpaper.png"
 
 echo -e "\n (; Dotfiles sync complete!\n"
 # NOTE: This syslink doesnot work (not possible from windows <-> linux), its added here to know where to keep the files.
