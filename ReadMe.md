@@ -9,6 +9,6 @@ Includes
 - fuzzel (wofi alternative)
 - waybar ( by @d00m1k SimpleBlueColorWaybar )
 
-![Desktop Screenshot]("assets/home.png")
+![Desktop Screenshot](assets/home.png)
 
-![Desktop Screenshot]("assets/neofetch.png")
+![Desktop Screenshot](assets/neofetch.png)
