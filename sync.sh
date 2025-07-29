@@ -15,8 +15,6 @@ else
   echo "$SYSTEMUI_DIR already exists, skipping creation..."
 fi
 
-
-
 # Helper: Link a file with backup
 link_file() {
   src="$1"
@@ -43,7 +41,6 @@ link_file() {
   echo "✅ Linked $dest → $src"
 }
 
-
 echo "!!!!!!!!!! Linking configuration files... !!!!!!!!!!"
 link_file "$DOTFILES_DIR/config/nvim" "$HOME/.config/nvim"
 link_file "$DOTFILES_DIR/.tmux.conf" "$HOME/.tmux.conf"
@@ -54,6 +51,7 @@ link_file "$DOTFILES_DIR/config/hypr" "$HOME/.config/hypr"
 link_file "$DOTFILES_DIR/config/fuzzel" "$HOME/.config/fuzzel"
 link_file "$DOTFILES_DIR/config/swaync" "$HOME/.config/swaync"
 link_file "$DOTFILES_DIR/config/waybar" "$HOME/.config/waybar"
+link_file "$DOTFILES_DIR/config/alacritty" "$HOME/.config/alacritty"
 link_file "$DOTFILES_DIR/config/wallpapers/wallpaper.png" "$HOME/SystemUI/Pictures/wallpaper.png"
 
 echo -e "\n (; Dotfiles sync complete!\n"

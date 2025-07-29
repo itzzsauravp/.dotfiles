@@ -1,0 +1,58 @@
+[window]
+opacity = 1
+decorations = "full"
+dynamic_padding = true
+
+[window.padding]
+x = 10
+y = 10
+
+[font]
+size = 12.0
+
+[font.normal]
+family = "JetBrainsMono Nerd Font"
+style = "Regular"
+
+[colors.primary]
+background = "0x1e1e2e"  # dark muted background
+foreground = "0xcdd6f4"  # soft white
+
+[colors.cursor]
+text = "0x1e1e2e"
+cursor = "0xcdd6f4"
+
+[colors.selection]
+text = "0x1e1e2e"
+background = "0xf5c2e7"
+
+[colors.normal]
+black =   "0x45475a"
+red =     "0xf38ba8"
+green =   "0xa6e3a1"
+yellow =  "0xf9e2af"
+blue =    "0x89b4fa"
+magenta = "0xf5c2e7"
+cyan =    "0x94e2d5"
+white =   "0xbac2de"
+
+[colors.bright]
+black =   "0x585b70"
+red =     "0xf38ba8"
+green =   "0xa6e3a1"
+yellow =  "0xf9e2af"
+blue =    "0x89b4fa"
+magenta = "0xf5c2e7"
+cyan =    "0x94e2d5"
+white =   "0xa6adc8"
+
+[terminal.shell]
+program = "/bin/bash"  # or zsh/fish if you're using that
+
+[mouse]
+hide_when_typing = true
+
+[cursor]
+style = "Beam"
+blink_interval = 500
+unfocused_hollow = true
